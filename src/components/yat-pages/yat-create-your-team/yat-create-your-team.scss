@@ -1,0 +1,16 @@
+@import '../../../../node_modules/bulma/bulma.sass';
+
+.yat-create-your-team {
+  .notification {
+    z-index: 100;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    &.hidden {
+      display: none;
+    }
+    &.visible {
+      display: block;
+    }
+  }
+}

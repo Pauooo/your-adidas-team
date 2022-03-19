@@ -1,0 +1,16 @@
+@import '../../../../node_modules/bulma/bulma.sass';
+
+.yat-your-team {
+  &--position-container {
+    margin: 1rem;
+  }
+  &--position-container:not(:last-child) {
+    border-bottom: solid 1px grey;
+  }
+
+  &--players {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+}

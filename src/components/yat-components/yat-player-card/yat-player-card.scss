@@ -1,0 +1,17 @@
+@import '../../../../node_modules/bulma/bulma.sass';
+
+.yat-player-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0.5rem;
+  width: 180px;
+  height: 330px;
+  .card-content {
+    padding: 0.5rem;
+  }
+
+  &--button {
+    margin: 0.5rem;
+  }
+}

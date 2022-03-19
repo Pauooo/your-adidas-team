@@ -1,0 +1,24 @@
+@import '../../../../node_modules/bulma/bulma.sass';
+
+.yat-all-national-teams {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem auto;
+
+  &--card {
+    display: flex;
+    justify-content: center;
+    width: 185px;
+    margin: 0.5rem;
+    &:hover {
+      background-color: hsl(0, 0%, 71%);
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
