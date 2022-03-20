@@ -4,22 +4,24 @@ This app is build with Stencil, a compiler for building fast web apps using Web 
 
 ## Getting Started
 
-To start a new project using Stencil, clone this repo to a new directory:
+To start the project:
+
+install it:
 
 ```bash
-npm init stencil app
+npm i
+```
+
+build the app for production, run:
+
+```bash
+npm run build
 ```
 
 and run:
 
 ```bash
 npm start
-```
-
-To build the app for production, run:
-
-```bash
-npm run build
 ```
 
 To run the unit tests once, run:
