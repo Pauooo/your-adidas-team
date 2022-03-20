@@ -19,8 +19,11 @@ export class YatTeam {
    * @returns players by position
    */
   private sortPlayersByPosition(arr: Player[], position: PlayerPositionType) {
-    console.table(arr.filter(el => el.position === position));
-    return arr.filter(el => el.position === position);
+    if (position === 'Coach') {
+      return arr.filter(el => el.position === null);
+    } else {
+      return arr.filter(el => el.position === position);
+    }
   }
 
   /**
@@ -30,7 +33,7 @@ export class YatTeam {
   private renderPlayersByPosition() {
     return PLAYER_POSITIONS.map((position: PlayerPositionType) => (
       <div class="yat-team--position-container">
-        <p class="subtitle is-4">{position + 's'}</p>
+        <p class="subtitle is-4">{position}</p>
         <div class="yat-team--players">
           {this.sortPlayersByPosition(this.team.squad, position).map((player: Player) => (
             <yat-player-card player={player} nationalTeam={this.team?.area?.name} />

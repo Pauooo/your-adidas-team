@@ -15,7 +15,7 @@ export class YatRoot {
               <figure class="image is-48x48">
                 <img src="./../../../assets/icon/icon.png"></img>
               </figure>
-              <h1 class="navbar-item title has-text-white is-3">YAT - Your Adidas Team</h1>
+              <h1 class="navbar-item title has-text-white is-3">Your Adidas Team</h1>
             </div>
           </stencil-route-link>
           <div class="navbar-menu">

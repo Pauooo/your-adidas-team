@@ -1,7 +1,7 @@
 /**
  * Player Positions
  */
-export const PLAYER_POSITIONS = ['Attacker', 'Midfielder', 'Defender', 'Goalkeeper'];
+export const PLAYER_POSITIONS = ['Attacker', 'Midfielder', 'Defender', 'Goalkeeper', 'Coach'];
 
 /**
  * Teams id

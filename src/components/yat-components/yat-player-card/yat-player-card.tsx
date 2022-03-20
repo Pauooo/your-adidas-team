@@ -49,7 +49,7 @@ export class YatPlayerCard {
     return (
       <div class="yat-player-card card">
         <div class="card-image">
-          <figure class="image is-4by3">
+          <figure class="image is-1by1">
             <img src="./../../../assets/img/athlete.png"></img>
           </figure>
         </div>

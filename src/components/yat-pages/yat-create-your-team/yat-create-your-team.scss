@@ -1,6 +1,14 @@
 @import '../../../../node_modules/bulma/bulma.sass';
 
 .yat-create-your-team {
+  span {
+    display: flex;
+    align-items: center;
+    ion-icon {
+      margin-right: 8px;
+    }
+  }
+
   .notification {
     z-index: 100;
     position: sticky;
@@ -12,15 +20,6 @@
     }
     &.visible {
       display: block;
-    }
-    button {
-      span {
-        display: flex;
-        align-items: center;
-        ion-icon {
-          margin-right: 4px;
-        }
-      }
     }
   }
 }
