@@ -144,7 +144,10 @@ export class YatCreateYourTeam {
           </div>
           <div class="notification is-danger is-light hidden" ref={el => (this.notificationElement = el as HTMLDivElement)}>
             <button class="delete" onClick={() => this.closeNotification()}></button>
-            <p>{this.modalMessage}</p>
+            <span>
+              <ion-icon size="large" name="warning-outline"></ion-icon>
+              <p>{this.modalMessage}</p>
+            </span>
           </div>
         </div>
       );

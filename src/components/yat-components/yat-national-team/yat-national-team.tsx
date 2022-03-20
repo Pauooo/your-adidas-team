@@ -46,7 +46,10 @@ export class YatNationalTeam {
         </div>
         {this.team.squad.length === 0 ? (
           <div class="notification is-danger is-light hidden">
-            <strong>Sorry,</strong>
+            <div class="notification--title">
+              <ion-icon size="large" name="sad-outline"></ion-icon>
+              <strong>Sorry,</strong>
+            </div>
             <p>Looks like this team is not ready yet...</p>
             <p>Click the button above to find an other team!</p>
           </div>

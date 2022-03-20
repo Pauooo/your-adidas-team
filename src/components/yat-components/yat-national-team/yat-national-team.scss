@@ -13,8 +13,16 @@
     flex-wrap: wrap;
     margin-bottom: 1rem;
   }
+
   .notification {
     width: fit-content;
     margin: 2rem auto;
+    &--title {
+      display: flex;
+      align-items: center;
+      ion-icon {
+        margin-right: 4px;
+      }
+    }
   }
 }
