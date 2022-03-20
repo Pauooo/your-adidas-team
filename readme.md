@@ -1,6 +1,6 @@
 # Your Adidas Team App
 
-This app is build with Stencil https://stenciljs.com/docs/introduction, a compiler for building fast web apps using Web Components.
+This app is build with Stencil [https://stenciljs.com/docs/introduction](https://stenciljs.com/docs/introduction), a compiler for building fast web apps using Web Components.
 
 ## Getting Started
 
@@ -32,11 +32,11 @@ npm test
 
 ## About this app
 
-- Many warning in the console are due to a stencil-router issue: [https://github.com/ionic-team/stencil-router/issues/124](https://github.com/ionic-team/stencil-router/issues/124)
-
 - Api used: [https://www.football-data.org/](https://www.football-data.org/)
 
 - Bulma is used as a css framework: [https://bulma.io/](https://bulma.io/)
+
+- Many warning in the console are due to a stencil-router issue: [https://github.com/ionic-team/stencil-router/issues/124](https://github.com/ionic-team/stencil-router/issues/124)
 
 ## TODO
 
