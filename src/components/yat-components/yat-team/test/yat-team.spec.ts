@@ -1,46 +1,20 @@
-import { YatTeam } from '../yat-team';
 import { newSpecPage } from '@stencil/core/testing';
+import { FAKE_TEAM } from '../../../../mocks';
+import { Team } from '../../../../types';
+import { YatTeam } from '../yat-team';
 
 describe('yat-team', () => {
-  describe('normalization', () => {
-    it('returns a blank string if the name is undefined', async () => {
-      const { rootInstance } = await newSpecPage({
-        components: [YatTeam],
-        html: '<yat-team></yat-team>',
-      });
-      expect(rootInstance.normalize(undefined)).toEqual('');
-    });
 
-    it('returns a blank string if the name is null', async () => {
-      const { rootInstance } = await newSpecPage({
-        components: [YatTeam],
-        html: '<yat-team></yat-team>',
-      });
-      expect(rootInstance.normalize(null)).toEqual('');
+  it('renders correctly component', async () => {
+    const page = await newSpecPage({
+      components: [YatTeam],
+      html: `<div></div>`
     });
-
-    it('capitalizes the first letter', async () => {
-      const { rootInstance } = await newSpecPage({
-        components: [YatTeam],
-        html: '<yat-team></yat-team>',
-      });
-      expect(rootInstance.normalize('quincy')).toEqual('Quincy');
-    });
-
-    it('lower-cases the following letters', async () => {
-      const { rootInstance } = await newSpecPage({
-        components: [YatTeam],
-        html: '<yat-team></yat-team>',
-      });
-      expect(rootInstance.normalize('JOSEPH')).toEqual('Joseph');
-    });
-
-    it('handles single letter names', async () => {
-      const { rootInstance } = await newSpecPage({
-        components: [YatTeam],
-        html: '<yat-team></yat-team>',
-      });
-      expect(rootInstance.normalize('q')).toEqual('Q');
-    });
+    await page.waitForChanges();
+    const component = page.doc.createElement('yat-team') as HTMLYatTeamElement;
+    component.team = FAKE_TEAM as Team;
+    page.root && page.root.appendChild(component);
+    await page.waitForChanges();
+    expect(component).toBeTruthy();
   });
 });

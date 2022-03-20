@@ -1,46 +1,19 @@
-import { YatYourTeam } from '../yat-your-team';
 import { newSpecPage } from '@stencil/core/testing';
+import { FAKE_TEAM } from '../../../../mocks';
+import { Team } from '../../../../types';
+import { YatYourTeam } from '../yat-your-team';
 
 describe('yat-your-team', () => {
-  describe('normalization', () => {
-    it('returns a blank string if the name is undefined', async () => {
-      const { rootInstance } = await newSpecPage({
-        components: [YatYourTeam],
-        html: '<yat-your-team></yat-your-team>',
-      });
-      expect(rootInstance.normalize(undefined)).toEqual('');
+  it('renders correctly component', async () => {
+    const page = await newSpecPage({
+      components: [YatYourTeam],
+      html: `<div></div>`
     });
-
-    it('returns a blank string if the name is null', async () => {
-      const { rootInstance } = await newSpecPage({
-        components: [YatYourTeam],
-        html: '<yat-your-team></yat-your-team>',
-      });
-      expect(rootInstance.normalize(null)).toEqual('');
-    });
-
-    it('capitalizes the first letter', async () => {
-      const { rootInstance } = await newSpecPage({
-        components: [YatYourTeam],
-        html: '<yat-your-team></yat-your-team>',
-      });
-      expect(rootInstance.normalize('quincy')).toEqual('Quincy');
-    });
-
-    it('lower-cases the following letters', async () => {
-      const { rootInstance } = await newSpecPage({
-        components: [YatYourTeam],
-        html: '<yat-your-team></yat-your-team>',
-      });
-      expect(rootInstance.normalize('JOSEPH')).toEqual('Joseph');
-    });
-
-    it('handles single letter names', async () => {
-      const { rootInstance } = await newSpecPage({
-        components: [YatYourTeam],
-        html: '<yat-your-team></yat-your-team>',
-      });
-      expect(rootInstance.normalize('q')).toEqual('Q');
-    });
+    await page.waitForChanges();
+    const component = page.doc.createElement('yat-your-team') as HTMLYatTeamElement;
+    component.team = FAKE_TEAM as Team;
+    page.root && page.root.appendChild(component);
+    await page.waitForChanges();
+    expect(component).toBeTruthy();
   });
 });

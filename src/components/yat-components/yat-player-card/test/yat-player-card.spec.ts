@@ -1,46 +1,32 @@
-import { YatPlayerCard } from '../yat-player-card';
 import { newSpecPage } from '@stencil/core/testing';
+import { Player } from '../../../../types';
+import { YatPlayerCard } from '../yat-player-card';
 
 describe('yat-player-card', () => {
-  describe('normalization', () => {
-    it('returns a blank string if the name is undefined', async () => {
-      const { rootInstance } = await newSpecPage({
-        components: [YatPlayerCard],
-        html: '<yat-player-card></yat-player-card>',
-      });
-      expect(rootInstance.normalize(undefined)).toEqual('');
-    });
 
-    it('returns a blank string if the name is null', async () => {
-      const { rootInstance } = await newSpecPage({
-        components: [YatPlayerCard],
-        html: '<yat-player-card></yat-player-card>',
-      });
-      expect(rootInstance.normalize(null)).toEqual('');
-    });
+  const fakeNationalPlayer: Player = {
+    id: 13,
+    name: 'John',
+    position: 'Attacker'
+  }
 
-    it('capitalizes the first letter', async () => {
-      const { rootInstance } = await newSpecPage({
-        components: [YatPlayerCard],
-        html: '<yat-player-card></yat-player-card>',
-      });
-      expect(rootInstance.normalize('quincy')).toEqual('Quincy');
-    });
+  const fakePlayer: Player = {
+    id: 13,
+    name: 'John',
+    position: 'Attacker',
+    originalTeam: 'England'
+  }
 
-    it('lower-cases the following letters', async () => {
-      const { rootInstance } = await newSpecPage({
-        components: [YatPlayerCard],
-        html: '<yat-player-card></yat-player-card>',
-      });
-      expect(rootInstance.normalize('JOSEPH')).toEqual('Joseph');
+  it('renders correctly component', async () => {
+    const page = await newSpecPage({
+      components: [YatPlayerCard],
+      html: `<div></div>`
     });
-
-    it('handles single letter names', async () => {
-      const { rootInstance } = await newSpecPage({
-        components: [YatPlayerCard],
-        html: '<yat-player-card></yat-player-card>',
-      });
-      expect(rootInstance.normalize('q')).toEqual('Q');
-    });
+    await page.waitForChanges();
+    const component = page.doc.createElement('yat-player-card');
+    component.player = fakeNationalPlayer;
+    page.root && page.root.appendChild(component);
+    await page.waitForChanges();
+    expect(component).toBeTruthy();
   });
 });

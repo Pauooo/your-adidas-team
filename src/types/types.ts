@@ -11,10 +11,11 @@ export interface Player {
   id: number;
   name: string;
   position: PlayerPositionType;
-  dateOfBirth: string;
-  countryOfBirth: string;
-  nationality: string;
-  role: string;
+  dateOfBirth?: string;
+  countryOfBirth?: string;
+  nationality?: string;
+  shirtNumber?: number;
+  role?: string;
   originalTeam?: string;
 }
 
@@ -27,6 +28,7 @@ export interface Team {
     id: number;
     name: string;
   };
+  activeCompetitions?: any;
   name: string;
   shortName?: string;
   tla?: string;
@@ -37,8 +39,8 @@ export interface Team {
   email?: string;
   founded?: number;
   clubColors?: string;
-  venue?: null,
-  squad: Player[];
+  venue?: string,
+  squad?: Player[];
   lastUpdated?: string;
 }
 

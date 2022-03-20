@@ -22,7 +22,11 @@ export class YatDmComponent {
     let response = await fetch(this.WORLD_CUP_URL, {
       headers: myHeaders,
     });
-    return await response.json();
+    if (response.ok) {
+      return await response.json();
+    } else {
+      console.error("HTTP-Error: " + response.status);
+    }
   }
 
   /**
@@ -36,7 +40,11 @@ export class YatDmComponent {
     let response = await fetch(url, {
       headers: myHeaders,
     });
-    return await response.json();
+    if (response.ok) {
+      return await response.json();
+    } else {
+      console.error("HTTP-Error: " + response.status);
+    }
   }
 
 }

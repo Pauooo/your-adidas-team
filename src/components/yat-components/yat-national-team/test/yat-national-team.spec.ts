@@ -1,46 +1,17 @@
-import { YatNationalTeam } from '../yat-national-team';
 import { newSpecPage } from '@stencil/core/testing';
+import { YatNationalTeam } from '../yat-national-team';
 
 describe('yat-national-team', () => {
-  describe('normalization', () => {
-    it('returns a blank string if the name is undefined', async () => {
-      const { rootInstance } = await newSpecPage({
-        components: [YatNationalTeam],
-        html: '<yat-national-team></yat-national-team>',
-      });
-      expect(rootInstance.normalize(undefined)).toEqual('');
+  xit('renders correctly component', async () => {
+    const page = await newSpecPage({
+      components: [YatNationalTeam],
+      html: `<div></div>`
     });
-
-    it('returns a blank string if the name is null', async () => {
-      const { rootInstance } = await newSpecPage({
-        components: [YatNationalTeam],
-        html: '<yat-national-team></yat-national-team>',
-      });
-      expect(rootInstance.normalize(null)).toEqual('');
-    });
-
-    it('capitalizes the first letter', async () => {
-      const { rootInstance } = await newSpecPage({
-        components: [YatNationalTeam],
-        html: '<yat-national-team></yat-national-team>',
-      });
-      expect(rootInstance.normalize('quincy')).toEqual('Quincy');
-    });
-
-    it('lower-cases the following letters', async () => {
-      const { rootInstance } = await newSpecPage({
-        components: [YatNationalTeam],
-        html: '<yat-national-team></yat-national-team>',
-      });
-      expect(rootInstance.normalize('JOSEPH')).toEqual('Joseph');
-    });
-
-    it('handles single letter names', async () => {
-      const { rootInstance } = await newSpecPage({
-        components: [YatNationalTeam],
-        html: '<yat-national-team></yat-national-team>',
-      });
-      expect(rootInstance.normalize('q')).toEqual('Q');
-    });
+    await page.waitForChanges();
+    const component = page.doc.createElement('yat-national-team');
+    component.teamId = 18;
+    page.root && page.root.appendChild(component);
+    await page.waitForChanges();
+    expect(component).toBeTruthy();
   });
 });

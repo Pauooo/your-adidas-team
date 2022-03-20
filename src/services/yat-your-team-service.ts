@@ -38,7 +38,6 @@ export class YatYourTeamService {
    */
   public addPlayerToYourTeam(player: Player): Team {
     this.yourTeam.squad = [...this.yourTeam.squad, player]
-    console.log('Player Added', this.yourTeam);
     return this.yourTeam;
   }
 
@@ -49,12 +48,11 @@ export class YatYourTeamService {
    */
   public removePlayerToYourTeam(player: Player) {
     this.yourTeam.squad = this.yourTeam.squad.filter(yourPlayer => yourPlayer.id !== player.id);
-    console.log('Player Removed', this.yourTeam);
     return this.yourTeam;
   }
 
   /**
-   * delete your team
+   * Deletes your team
    * @returns
    */
   public deleteYourTeam(): Team {
