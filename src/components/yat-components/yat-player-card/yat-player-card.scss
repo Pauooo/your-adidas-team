@@ -13,5 +13,14 @@
 
   &--button {
     margin: 0.5rem;
+    span {
+      display: flex;
+      align-items: center;
+      ion-icon {
+        font-size: 24px;
+        color: white;
+        margin-right: 4px;
+      }
+    }
   }
 }

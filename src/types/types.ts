@@ -1,7 +1,7 @@
 /**
  * Player Positions
  */
-export type PlayerPositionType = 'Defender' | 'Attacker' | 'Midfielder' | 'Goalkeeper';
+export type PlayerPositionType = 'Defender' | 'Attacker' | 'Midfielder' | 'Goalkeeper' | null;
 
 
 /**

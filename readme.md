@@ -1,6 +1,6 @@
 # Your Adidas Team App
 
-This app is build with Stencil [https://stenciljs.com/docs/introduction](https://stenciljs.com/docs/introduction), a compiler for building fast web apps using Web Components.
+This app is build with Stencil ([https://stenciljs.com/docs/introduction](https://stenciljs.com/docs/introduction)), a compiler for building fast web apps using Web Components.
 
 ## Getting Started
 
@@ -41,8 +41,8 @@ npm test
 ## TODO
 
 - Unit Tests => improve coverage and find a way to configure Jest to includes all files in coverage
+- Retrieve the national teams properly.
 - Manage better Responsive
-- Add Icons
 - Disable the adding button if a team player is already in my team
 - Add players in tabs depending on the position of the player
-- be able to drag and drop the player from a team to the other
+- Be able to drag and drop the player from a team to the other

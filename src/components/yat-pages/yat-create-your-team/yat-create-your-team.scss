@@ -13,5 +13,14 @@
     &.visible {
       display: block;
     }
+    button {
+      span {
+        display: flex;
+        align-items: center;
+        ion-icon {
+          margin-right: 4px;
+        }
+      }
+    }
   }
 }

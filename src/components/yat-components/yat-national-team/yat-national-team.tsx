@@ -11,7 +11,7 @@ export class YatNationalTeam {
   /**
    * Yat data Manager to retrieve data from API
    */
-  private yatDm!: YatDmComponent;
+  private yatDm = new YatDmComponent();
 
   /**
    * Current national team

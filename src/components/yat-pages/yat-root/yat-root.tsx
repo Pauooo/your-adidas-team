@@ -12,7 +12,7 @@ export class YatRoot {
         <nav class="navbar has-background-black has-text-dark" role="navigation" aria-label="main navigation">
           <stencil-route-link url={'/'}>
             <div class="navbar-brand is-align-items-center">
-              <figure class="image is-32x32">
+              <figure class="image is-48x48">
                 <img src="./../../../assets/icon/icon.png"></img>
               </figure>
               <h1 class="navbar-item title has-text-white is-3">YAT - Your Adidas Team</h1>

@@ -39,7 +39,7 @@ export class YatYourTeamPage {
         <yat-your-team team={this.yourTeam}>
           <div slot="actions" class="has-text-right">
             <button class="button is-black is-outlined" onClick={() => this.deleteTeam()}>
-              Delete the whole Team
+              <ion-icon size="large" name="trash"></ion-icon> Delete the whole Team
             </button>
           </div>
         </yat-your-team>

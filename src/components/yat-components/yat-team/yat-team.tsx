@@ -18,7 +18,8 @@ export class YatTeam {
    * @param position
    * @returns players by position
    */
-  private sortPlayersByPosition(arr, position: PlayerPositionType) {
+  private sortPlayersByPosition(arr: Player[], position: PlayerPositionType) {
+    console.table(arr.filter(el => el.position === position));
     return arr.filter(el => el.position === position);
   }
 

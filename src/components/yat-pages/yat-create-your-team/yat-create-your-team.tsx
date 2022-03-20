@@ -130,7 +130,10 @@ export class YatCreateYourTeam {
             <div class="column">
               <div class="is-flex is-justify-content-center mb-4">
                 <button class="button is-black is-outlined" onClick={() => this.getRandomTeam()}>
-                  Change National Team
+                  <span>
+                    <ion-icon size="large" name="sync-outline"></ion-icon>
+                    Change National Team
+                  </span>
                 </button>
               </div>
               <yat-national-team teamId={this.nationalTeamId} />

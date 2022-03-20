@@ -11,7 +11,7 @@ export class YatAllNationalTeams {
   /**
    * Yat data Manager to retrieve data from API
    */
-  private yatDm!: YatDmComponent;
+  private yatDm = new YatDmComponent();
 
   /**
    * World cup teams info
@@ -22,13 +22,17 @@ export class YatAllNationalTeams {
    * Stencil Lifecycle method to be called once just after the component is first connected to the DOM.
    */
   async componentWillLoad() {
-    this.worldCupTeamsInfo = await this.yatDm.getWorldCupTeams();
+    try {
+      this.worldCupTeamsInfo = await this.yatDm.getWorldCupTeams();
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   render() {
     return (
       <div class="yat-all-national-teams">
-        {this.worldCupTeamsInfo.teams.map(team => (
+        {this.worldCupTeamsInfo?.teams.map(team => (
           <stencil-route-link url={'/create-your-team/' + team.id}>
             <div class="card yat-all-national-teams--card">
               <div class="card-content">
