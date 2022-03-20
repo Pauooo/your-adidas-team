@@ -7,6 +7,9 @@ import { Player, PlayerPositionType, PLAYER_POSITIONS, Team } from '../../../typ
   shadow: true,
 })
 export class YatTeam {
+  /**
+   * Team to display
+   */
   @Prop() team: Team;
 
   /**

@@ -52,4 +52,19 @@ export class YatYourTeamService {
     console.log('Player Removed', this.yourTeam);
     return this.yourTeam;
   }
+
+  /**
+   * delete your team
+   * @returns
+   */
+  public deleteYourTeam(): Team {
+    const yourTeam =
+    {
+      id: 'yourTeam',
+      name: 'YourTeam',
+      squad: []
+    };
+    this.yourTeam = yourTeam;
+    return this.yourTeam;
+  }
 }

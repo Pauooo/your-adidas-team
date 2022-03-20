@@ -37,9 +37,15 @@ export namespace Components {
     interface YatRoot {
     }
     interface YatTeam {
+        /**
+          * Team to display
+         */
         "team": Team;
     }
     interface YatYourTeam {
+        /**
+          * Team to display
+         */
         "team": Team;
     }
     interface YatYourTeamPage {
@@ -146,9 +152,15 @@ declare namespace LocalJSX {
     interface YatRoot {
     }
     interface YatTeam {
+        /**
+          * Team to display
+         */
         "team"?: Team;
     }
     interface YatYourTeam {
+        /**
+          * Team to display
+         */
         "team"?: Team;
     }
     interface YatYourTeamPage {

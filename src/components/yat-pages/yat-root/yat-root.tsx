@@ -20,7 +20,7 @@ export class YatRoot {
           </stencil-route-link>
           <div class="navbar-menu">
             <div class="navbar-end is-align-items-center">
-              <stencil-route-link url={'/create-your-team/45'}>
+              <stencil-route-link url={'/create-your-team/98'}>
                 <p class="navbar-item title has-text-white is-5">Create your Team</p>
               </stencil-route-link>
               <stencil-route-link url={'/your-team'}>

@@ -7,21 +7,33 @@ import { Team } from '../../../types';
   shadow: true,
 })
 export class YatYourTeam {
+  /**
+   * State to rerender the component if the team has changed
+   */
   @State() teamLength = 0;
 
+  /**
+   * Team to display
+   */
   @Prop() team: Team;
 
+  /**
+   * Watches if team length has changed
+   */
   @Watch('team')
   onTeamUpdate(): void {
     this.checkEmptyTeam();
   }
 
+  /**
+   * Stencil Lifecycle method to be called once just after the component is first connected to the DOM.
+   */
   async componentWillLoad() {
     this.checkEmptyTeam();
   }
 
   /**
-   * Checks if the team has players
+   * Checks the team length
    */
   private checkEmptyTeam(): void {
     this.teamLength = this.team.squad.length;
@@ -41,6 +53,10 @@ export class YatYourTeam {
     );
   }
 
+  /**
+   * Renders team if exists or a message if the team is empty
+   * @returns
+   */
   private renderTeam() {
     return this.teamLength ? <yat-team team={this.team}></yat-team> : <p class="title is-4 has-text-centered my-4">Your Adidas Team has no players yet!</p>;
   }
@@ -52,6 +68,7 @@ export class YatYourTeam {
           <p class="title mb-3">Your Team</p>
         </div>
         {this.renderYourTeamRules()}
+        <slot name="actions" />
         {this.renderTeam()}
       </div>
     );

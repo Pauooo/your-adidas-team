@@ -33,12 +33,24 @@ export interface Team {
   address?: string;
   phone?: string;
   website?: string;
+  crestUrl?: string;
   email?: string;
   founded?: number;
   clubColors?: string;
   venue?: null,
   squad: Player[];
   lastUpdated?: string;
+}
+
+/**
+ * WorldCup Teams interface
+ */
+export interface WorldCupTeams {
+  competition: any;
+  count: number;
+  filters: any;
+  season: any;
+  teams: Team[];
 }
 
 /**

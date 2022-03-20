@@ -1,4 +1,5 @@
 import { Component, h } from '@stencil/core';
+import { WorldCupTeams } from '../../../types';
 
 @Component({
   tag: 'yat-all-national-teams',
@@ -6,21 +7,27 @@ import { Component, h } from '@stencil/core';
   shadow: true,
 })
 export class YatAllNationalTeams {
-  private worldCupTeams: any;
+  /**
+   * World cup teams info
+   */
+  private worldCupTeamsInfo: WorldCupTeams;
 
+  /**
+   * Stencil Lifecycle method to be called once just after the component is first connected to the DOM.
+   */
   async componentWillLoad() {
     const myHeaders = new Headers();
     myHeaders.append('X-Auth-Token', 'c0a4f2d106c24c49b55d4d72d5518a9f');
     let response = await fetch('http://api.football-data.org/v2/competitions/WC/teams', {
       headers: myHeaders,
     });
-    this.worldCupTeams = await response.json();
+    this.worldCupTeamsInfo = await response.json();
   }
 
   render() {
     return (
       <div class="yat-all-national-teams">
-        {this.worldCupTeams.teams.map(team => (
+        {this.worldCupTeamsInfo.teams.map(team => (
           <stencil-route-link url={'/create-your-team/' + team.id}>
             <div class="card yat-all-national-teams--card">
               <div class="card-content">

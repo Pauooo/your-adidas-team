@@ -3,9 +3,10 @@
 .yat-create-your-team {
   .notification {
     z-index: 100;
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
+    position: sticky;
+    bottom: 0.5rem;
+    right: 0;
+
     &.hidden {
       display: none;
     }

@@ -1,7 +1,7 @@
 import { Component, h, Listen, Prop, State } from '@stencil/core';
 import { MatchResults } from '@stencil/router';
 import { YatYourTeamService } from '../../../services/yat-your-team-service';
-import { Player, Team, YourTeamPlayerEvent } from '../../../types';
+import { Player, Team, TEAMS_ID_MOCK, YourTeamPlayerEvent } from '../../../types';
 
 @Component({
   tag: 'yat-create-your-team',
@@ -39,16 +39,21 @@ export class YatCreateYourTeam {
    */
   @Prop() match: MatchResults;
 
+  /**
+   * Stencil Lifecycle method to be called once just after the component is first connected to the DOM.
+   */
   componentWillLoad() {
     this.yatYourTeamService = YatYourTeamService.getInstance();
     this.yourTeam = this.yatYourTeamService.getYourTeam();
-    this.nationalTeamId = 18;
+    this.nationalTeamId = +this.match.params.id;
   }
 
+  /**
+   * Gets random team
+   * TODO: change this when it will be possible to retreives all the nationals teams squad
+   */
   private getRandomTeam() {
-    const oldTeamId = this.nationalTeamId;
-    this.nationalTeamId = +this.match.params.id.slice(0, 2) !== oldTeamId ? +this.match.params.id.slice(0, 2) : Math.trunc(Math.random() * 100);
-    this.nationalTeamId === 0 && (this.nationalTeamId = Math.trunc(Math.random() * 100));
+    this.nationalTeamId = TEAMS_ID_MOCK[Math.trunc(Math.random() * 10)];
     console.log(this.nationalTeamId);
   }
 
@@ -121,7 +126,7 @@ export class YatCreateYourTeam {
     if (this.match && this.match.params.id) {
       return (
         <div class="yat-create-your-team">
-          <div class="columns">
+          <div class="columns is-gapless">
             <div class="column">
               <div class="is-flex is-justify-content-center mb-4">
                 <button class="button is-black is-outlined" onClick={() => this.getRandomTeam()}>

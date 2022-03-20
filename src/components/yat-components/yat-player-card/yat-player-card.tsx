@@ -61,7 +61,7 @@ export class YatPlayerCard {
         <button class="button is-black is-small yat-player-card--button" onClick={() => this.playerClickHandler()}>
           {this.nationalTeam ? (
             <span>
-              <i class="fa-light fa-circle-plus"></i>Add to me to your team!
+              <i class="fa-light fa-circle-plus"></i>Add me to your team!
             </span>
           ) : (
             <span>

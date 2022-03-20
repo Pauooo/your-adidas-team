@@ -17,15 +17,25 @@ export class YatNationalTeam {
    */
   @Prop() teamId: number;
 
+  /**
+   * Watches if the prop team id changes if it's the case it gets the new national team
+   */
   @Watch('teamId')
   private async updateTeam() {
     await this.getNationalTeam();
   }
 
+  /**
+   * Stencil Lifecycle method to be called once just after the component is first connected to the DOM.
+   */
   async componentWillLoad() {
     await this.getNationalTeam();
   }
 
+  /**
+   * Gets national team
+   * @returns national team
+   */
   private async getNationalTeam(): Promise<void> {
     const url = 'http://api.football-data.org/v2/teams/' + this.teamId;
     const myHeaders = new Headers();

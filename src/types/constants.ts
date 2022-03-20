@@ -3,5 +3,20 @@
  */
 export const PLAYER_POSITIONS = ['Attacker', 'Midfielder', 'Defender', 'Goalkeeper'];
 
+/**
+ * Teams id
+ * TODO: remove this array and fetch directly using API
+ */
+export const TEAMS_ID_MOCK = [75,
+  18,
+  3754,
+  5655,
+  4485,
+  78,
+  98,
+  9356,
+  4453,
+  4458
+];
 
-export const YOUR_TEAM_RULES = 'Create your team of maximum 16 members '
+
