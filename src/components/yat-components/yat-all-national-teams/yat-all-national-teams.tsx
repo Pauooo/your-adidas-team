@@ -1,4 +1,5 @@
 import { Component, h } from '@stencil/core';
+import { YatDmComponent } from '../../../dm/dm';
 import { WorldCupTeams } from '../../../types';
 
 @Component({
@@ -8,6 +9,11 @@ import { WorldCupTeams } from '../../../types';
 })
 export class YatAllNationalTeams {
   /**
+   * Yat data Manager to retrieve data from API
+   */
+  private yatDm!: YatDmComponent;
+
+  /**
    * World cup teams info
    */
   private worldCupTeamsInfo: WorldCupTeams;
@@ -16,12 +22,7 @@ export class YatAllNationalTeams {
    * Stencil Lifecycle method to be called once just after the component is first connected to the DOM.
    */
   async componentWillLoad() {
-    const myHeaders = new Headers();
-    myHeaders.append('X-Auth-Token', 'c0a4f2d106c24c49b55d4d72d5518a9f');
-    let response = await fetch('http://api.football-data.org/v2/competitions/WC/teams', {
-      headers: myHeaders,
-    });
-    this.worldCupTeamsInfo = await response.json();
+    this.worldCupTeamsInfo = await this.yatDm.getWorldCupTeams();
   }
 
   render() {

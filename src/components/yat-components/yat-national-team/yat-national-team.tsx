@@ -1,4 +1,5 @@
 import { Component, h, Prop, State, Watch } from '@stencil/core';
+import { YatDmComponent } from '../../../dm/dm';
 import { Team } from '../../../types';
 
 @Component({
@@ -7,6 +8,11 @@ import { Team } from '../../../types';
   shadow: true,
 })
 export class YatNationalTeam {
+  /**
+   * Yat data Manager to retrieve data from API
+   */
+  private yatDm!: YatDmComponent;
+
   /**
    * Current national team
    */
@@ -22,28 +28,14 @@ export class YatNationalTeam {
    */
   @Watch('teamId')
   private async updateTeam() {
-    await this.getNationalTeam();
+    this.team = await this.yatDm.getNationalTeam(this.teamId);
   }
 
   /**
    * Stencil Lifecycle method to be called once just after the component is first connected to the DOM.
    */
   async componentWillLoad() {
-    await this.getNationalTeam();
-  }
-
-  /**
-   * Gets national team
-   * @returns national team
-   */
-  private async getNationalTeam(): Promise<void> {
-    const url = 'http://api.football-data.org/v2/teams/' + this.teamId;
-    const myHeaders = new Headers();
-    myHeaders.append('X-Auth-Token', 'c0a4f2d106c24c49b55d4d72d5518a9f');
-    let response = await fetch(url, {
-      headers: myHeaders,
-    });
-    this.team = await response.json();
+    this.team = await this.yatDm.getNationalTeam(this.teamId);
   }
 
   render() {
