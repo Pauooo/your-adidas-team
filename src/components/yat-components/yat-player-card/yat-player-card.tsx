@@ -9,6 +9,11 @@ import { CssClassMap } from '../../../utils';
 })
 export class YatPlayerCard {
   /**
+   * A control variable in order to determine if the app is running in a small breakpoint (under 769px) or not
+   */
+  private isSmallBreakpoint: boolean;
+
+  /**
    * Player to display
    */
   @Prop() player: Player;
@@ -23,6 +28,13 @@ export class YatPlayerCard {
    */
   @Event()
   movePlayerEvent!: EventEmitter<YourTeamPlayerEvent>;
+
+  /**
+   * Stencil Lifecycle method to be called once just after the component is first connected to the DOM.
+   */
+  componentWillLoad() {
+    this.isSmallBreakpoint = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) < 769;
+  }
 
   /**
    * Players click handler
@@ -48,11 +60,13 @@ export class YatPlayerCard {
 
     return (
       <div class="yat-player-card card">
-        <div class="card-image">
-          <figure class="image is-1by1">
-            <img src="./../../../assets/img/athlete.png"></img>
-          </figure>
-        </div>
+        {!this.isSmallBreakpoint && (
+          <div class="card-image">
+            <figure class="image is-1by1">
+              <img src="./../../../assets/img/athlete.png" alt="athlete-avatar"></img>
+            </figure>
+          </div>
+        )}
         <div class="card-content">
           <p class="title is-6 mb-1">{this.player.name}</p>
           <span class={setTagPositionClass}>{this.player.position ? this.player.position : 'Coach'}</span>
@@ -61,7 +75,8 @@ export class YatPlayerCard {
         <button class="button is-black is-small yat-player-card--button" onClick={() => this.playerClickHandler()}>
           {this.nationalTeam ? (
             <span>
-              <ion-icon name="add-outline"></ion-icon>Add me to your team
+              <ion-icon name="add-outline"></ion-icon>
+              {this.isSmallBreakpoint ? 'Add me' : 'Add me to your team'}
             </span>
           ) : (
             <span>

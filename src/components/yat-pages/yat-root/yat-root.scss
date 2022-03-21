@@ -1,10 +1,20 @@
 @import '../../../../node_modules/bulma/bulma.sass';
 
 nav {
-  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
 
-  .navbar-end {
-    justify-content: center;
+  @media (min-width: 769px) {
+    padding: 0 1rem;
+  }
+  .navbar {
+    &-other {
+      display: flex;
+      align-items: center;
+    }
+    &-end {
+      justify-content: center;
+    }
   }
 
   figure.image.is-48x48 {

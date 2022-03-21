@@ -5,8 +5,11 @@
   flex-direction: column;
   justify-content: space-between;
   margin: 0.5rem;
-  width: 180px;
-  height: 330px;
+  width: 140px;
+  @media (min-width: 769px) {
+    width: 180px;
+    height: 330px;
+  }
   .card-content {
     padding: 0.5rem;
   }
