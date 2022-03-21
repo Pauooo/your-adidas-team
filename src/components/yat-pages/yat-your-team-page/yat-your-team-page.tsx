@@ -36,13 +36,18 @@ export class YatYourTeamPage {
   render() {
     return (
       <div class="yat-your-team-page">
-        <yat-your-team team={this.yourTeam}>
-          <div slot="actions" class="has-text-right">
-            <button class="button is-black is-outlined" onClick={() => this.deleteTeam()}>
-              <ion-icon size="large" name="trash"></ion-icon> Delete the whole Team
-            </button>
-          </div>
-        </yat-your-team>
+        <section class="yat-your-team-page--banner section is-medium">
+          <img src="./../../../assets/img/banner_adidas_03.jpg" alt="adidas-banner" />
+        </section>
+        <div class="yat-your-team-page--your-team">
+          <yat-your-team team={this.yourTeam}>
+            <div slot="actions" class="has-text-right yat-your-team--actions">
+              <button class="button is-black is-outlined" onClick={() => this.deleteTeam()}>
+                <ion-icon size="large" name="trash"></ion-icon> Delete the whole Team
+              </button>
+            </div>
+          </yat-your-team>
+        </div>
       </div>
     );
   }

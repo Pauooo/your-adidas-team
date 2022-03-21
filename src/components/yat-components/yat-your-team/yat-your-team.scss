@@ -13,4 +13,15 @@
     flex-wrap: wrap;
     margin-bottom: 1rem;
   }
+
+  &--rules-container {
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    @media (min-width: 769px) {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+  }
 }

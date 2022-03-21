@@ -45,8 +45,9 @@ export class YatYourTeam {
    */
   private renderYourTeamRules() {
     return (
-      <div class="mb-4">
-        <p class="subtitle is-6 mb-1">Create your team of maximum 16 members with at least : 1 coach, 4 defenders, 4 midfielders, 2 attackers, 2 goalkeepers.</p>
+      <div class="yat-your-team--rules mb-4 mr-4">
+        <p class="subtitle is-6 mb-1">Create your team of maximum 16 members with at least :</p>
+        <p class="subtitle is-6 mb-1">1 coach, 4 defenders, 4 midfielders, 2 attackers, 2 goalkeepers.</p>
         <p class="subtitle is-6 mb-1">You can choose maximum 4 players of same national team.</p>
         <p class="subtitle is-6 mb-1">Enjoy creating Your Adidas Team!</p>
       </div>
@@ -67,8 +68,10 @@ export class YatYourTeam {
         <div class="has-text-centered">
           <p class="title mb-3">Your Team</p>
         </div>
-        {this.renderYourTeamRules()}
-        <slot name="actions" />
+        <div class="yat-your-team--rules-container">
+          {this.renderYourTeamRules()}
+          <slot name="actions" />
+        </div>
         {this.renderTeam()}
       </div>
     );

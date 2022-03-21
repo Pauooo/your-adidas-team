@@ -1,14 +1,18 @@
 @import '../../../../node_modules/bulma/bulma.sass';
 
 .yat-home {
-  .yat-home {
-    &--national-teams {
-      margin: 0;
-      margin-top: 1.5rem;
+  &--national-teams {
+    margin: 0;
+    margin-top: 1.5rem;
+    padding: 0 1.5rem;
+    @media (min-width: 480px) {
+      padding: 0 6rem;
+    }
+    @media (min-width: 769px) {
       padding: 0 20%;
     }
-    &--banner {
-      padding: 0;
-    }
+  }
+  .section.is-medium {
+    padding: 0;
   }
 }

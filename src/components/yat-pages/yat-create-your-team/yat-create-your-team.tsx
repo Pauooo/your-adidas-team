@@ -54,7 +54,6 @@ export class YatCreateYourTeam {
    */
   private getRandomTeam() {
     this.nationalTeamId = TEAMS_ID_MOCK[Math.trunc(Math.random() * 10)];
-    console.log(this.nationalTeamId);
   }
 
   /**
