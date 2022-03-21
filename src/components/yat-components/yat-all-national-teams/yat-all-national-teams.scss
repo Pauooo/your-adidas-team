@@ -9,16 +9,19 @@
   &--card {
     display: flex;
     justify-content: center;
-    width: 185px;
+    width: 170px;
     margin: 0.5rem;
+    border-radius: 0;
+    border: solid 1px black;
     &:hover {
-      background-color: hsl(0, 0%, 71%);
+      background-color: hsl(0, 0%, 90%);
     }
 
     .card-content {
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 1rem;
     }
   }
 }
