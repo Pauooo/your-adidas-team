@@ -22,7 +22,7 @@ export class YatRoot {
     return (
       <div>
         <nav class="navbar has-background-black has-text-dark" role="navigation" aria-label="main navigation">
-          <stencil-route-link url={'/'}>
+          <stencil-route-link url={'/'} activeClass="active">
             {this.isSmallBreakpoint ? (
               <div class="navbar-brand is-align-items-center">
                 <h1 class="navbar-item title has-text-white is-4">YAT</h1>
@@ -37,10 +37,10 @@ export class YatRoot {
             )}
           </stencil-route-link>
           <div class="navbar-other">
-            <stencil-route-link url={'/create-your-team/98'}>
+            <stencil-route-link url={'/create-your-team/98'} activeClass="active">
               <p class={`${this.isSmallBreakpoint ? 'is-6' : 'is-5'} navbar-item title has-text-white`}>Create your Team</p>
             </stencil-route-link>
-            <stencil-route-link url={'/your-team'}>
+            <stencil-route-link url={'/your-team'} activeClass="active">
               <p class={`${this.isSmallBreakpoint ? 'is-6' : 'is-5'} navbar-item title has-text-white`}>Your Team</p>
             </stencil-route-link>
           </div>

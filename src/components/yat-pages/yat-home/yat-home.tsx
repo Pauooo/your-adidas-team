@@ -14,7 +14,7 @@ export class YatHome {
         </section>
         <section class="yat-home--national-teams hero is-large">
           <h1 class="title">Create your team</h1>
-          <h2 class="subtitle">Select players from the different national teams around the World and assign them to your own adidas team</h2>
+          <h2 class="subtitle">Select players from the different national teams around the World and assign them to your own adidas team.</h2>
           <yat-all-national-teams />
         </section>
       </div>

@@ -17,6 +17,12 @@ nav {
     }
   }
 
+  .active {
+    p {
+      border-bottom: 2px solid white;
+    }
+  }
+
   figure.image.is-48x48 {
     display: flex;
     align-items: center;

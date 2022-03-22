@@ -37,7 +37,7 @@ export class YatAllNationalTeams {
             <div class="card yat-all-national-teams--card">
               <div class="card-content">
                 <figure class="image is-48x48">
-                  <img src={team.crestUrl} alt="country_flag"></img>
+                  <img src={team.crestUrl ? team.crestUrl : './../../../assets/img/image_not_available.png'} alt="country_flag"></img>
                 </figure>
                 <p class="title is-5">{team.name}</p>
               </div>
