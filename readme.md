@@ -40,9 +40,9 @@ npm test
 
 ## TODO
 
-- Unit Tests => improve coverage and find a way to configure Jest to includes all files in coverage
-- Retrieve the national teams properly.
-- Manage better Responsive
+- Unit Tests => improve coverage.
+- Retrieve the national teams properly (the national teams of this API do not have squad)
+- Manage Responsive better
 - Disable the adding button if a team player is already in my team
 - Add players in tabs depending on the position of the player
 - Be able to drag and drop the player from a team to the other
