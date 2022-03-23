@@ -8,6 +8,7 @@ const YOUR_TEAM = {
   name: 'YourTeam',
   squad: []
 }
+//TODO: add tests
 describe('yat-create-your-team', () => {
 
   beforeEach(() => {

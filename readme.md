@@ -40,8 +40,8 @@ npm test
 
 ## TODO
 
-- Unit Tests => improve coverage.
 - Retrieve the national teams properly (the national teams of this API do not have squad)
+- Unit Tests => improve coverage (for yat-create-your-team-page and Dm)
 - Manage Responsive better
 - Disable the adding button if a team player is already in my team
 - Add players in tabs depending on the position of the player

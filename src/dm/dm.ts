@@ -19,13 +19,13 @@ export class YatDmComponent {
   public async getWorldCupTeams(): Promise<WorldCupTeams> {
     const myHeaders = new Headers();
     myHeaders.append('X-Auth-Token', 'c0a4f2d106c24c49b55d4d72d5518a9f');
-    let response = await fetch(this.WORLD_CUP_URL, {
-      headers: myHeaders,
-    });
-    if (response.ok) {
+    try {
+      let response = await fetch(this.WORLD_CUP_URL, {
+        headers: myHeaders,
+      });
       return await response.json();
-    } else {
-      console.error("HTTP-Error: " + response.status);
+    } catch (error) {
+      console.error("getWorldCupTeams-Error: " + error);
     }
   }
 
@@ -37,13 +37,13 @@ export class YatDmComponent {
     const url = this.TEAM_URL + teamId;
     const myHeaders = new Headers();
     myHeaders.append('X-Auth-Token', 'c0a4f2d106c24c49b55d4d72d5518a9f');
-    let response = await fetch(url, {
-      headers: myHeaders,
-    });
-    if (response.ok) {
+    try {
+      let response = await fetch(url, {
+        headers: myHeaders,
+      });
       return await response.json();
-    } else {
-      console.error("HTTP-Error: " + response.status);
+    } catch (error) {
+      console.error("getNationalTeam-Error: " + error);
     }
   }
 
